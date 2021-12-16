@@ -2,32 +2,33 @@ package com.khulaifialkatsiri.left_store
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
-    private var webView: WebView? = null
+
+    private lateinit var currentFragment : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        webView = findViewById(R.id.wb_webView)
-        webView!!.webViewClient = WebViewClient()
-        webView!!.loadUrl("https://sepatu.left-store.biz/")
+        supportFragmentManager.beginTransaction().replace(R.id.nav_container, CatalogueFragment()).commit()
+        val bottomNav : BottomNavigationView = findViewById(R.id.bottom_navigaton)
 
-        val webSettings = webView!!.settings
-        webSettings.javaScriptEnabled = true
-        webSettings.domStorageEnabled = true
+        bottomNav.setOnNavigationItemSelectedListener(navListener)
     }
 
-    override fun onBackPressed() {
-        if (webView!!.canGoBack()){
-            webView!!.goBack()
-        } else {
-            super.onBackPressed()
+    val navListener = BottomNavigationView.OnNavigationItemSelectedListener {
+        when(it.itemId){
+            R.id.ic_Catalogue -> {
+                currentFragment = CatalogueFragment()
+            }
+            R.id.ic_News -> {
+                currentFragment = CekFragment()
+            }
         }
+        supportFragmentManager.beginTransaction().replace(R.id.nav_container, currentFragment).commit()
+        true
     }
 }
