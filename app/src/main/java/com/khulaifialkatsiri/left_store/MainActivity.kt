@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 currentFragment = CatalogueFragment()
             }
             R.id.ic_News -> {
-                currentFragment = CekFragment()
+                currentFragment = NewsFragment()
             }
         }
         supportFragmentManager.beginTransaction().replace(R.id.nav_container, currentFragment).commit()

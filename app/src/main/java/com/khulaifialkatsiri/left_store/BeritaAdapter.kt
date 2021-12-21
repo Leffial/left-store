@@ -3,32 +3,32 @@ package com.khulaifialkatsiri.left_store
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_news.view.*
 
-class BeritaAdapter (private val list: ArrayList<BeritaResponse>): RecyclerView.Adapter<BeritaAdapter.BeritaViewHolder>(){
-    inner class BeritaViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        fun bind(beritaResponse: BeritaResponse){
-            with(itemView){
-                val text = "${beritaResponse.title}\n" +
-                        "${beritaResponse.deskripsi}\n" +
-                        "${beritaResponse.tanggal}"
-                val new = "${beritaResponse.penulis}"
-                tv_new.text = new
-                tvText.text = text
+class BeritaAdapter(private val mNameList: List<BeritaResponse>?) : RecyclerView.Adapter<BeritaAdapter.MyViewHolder>() {
 
-            }
-        }
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //var mBeritaImage: ImageView = itemView.findViewById(R.id.ivBeritaImage)
+        var mBeritaName: TextView = itemView.findViewById(R.id.tvText)
+        var mBeritaDescription: TextView = itemView.findViewById(R.id.tv_new)
+        var mBeritaTanggal: TextView = itemView.findViewById(R.id.tv_tanggal)
+
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeritaViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_news, parent, false)
-        return BeritaViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_news, parent, false)
+        return MyViewHolder(itemView)
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.mBeritaName.text = mNameList?.get(position)?.title ?: ""
+        holder.mBeritaDescription.text = mNameList?.get(position)?.deskripsi ?: ""
+        holder.mBeritaTanggal.text = mNameList?.get(position)?.tanggal ?: ""
+    }
 
-    override fun onBindViewHolder(holder: BeritaViewHolder, position: Int) {
-        holder.bind(list[position])
+    override fun getItemCount(): Int {
+        return mNameList?.size ?: 0
     }
 }

@@ -15,5 +15,10 @@
         android:name="com.khulaifialkatsiri.percobaan.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.khulaifialkatsiri.percobaan.SplashFragment"
+        android:label="Splash Screen"
+        tools:layout="@layout/fragment_splash" />
 
 </navigation>
