@@ -1,24 +1,17 @@
 ## Left-Store
 Left-Store is an application where users can find information of local shoes in Indonesia
 
-## Available
+## PlayStore Link
 https://play.google.com/store/apps/details?id=com.khulaifialkatsiri.percobaan
 
-## Target Segment
-- Users who like local shoes
-- Left-Store Visitor
+## Testers Profile
+1. Muhammad Daffa Baihaqi (Sports student who loves local shoes especially compass and ventela)
+2. Andri Rahmanto (students who like local products)
+3. Gian Chiesa(students who love local shoes and are members of several communities)
 
-## Data Source
-- LocalShoes information data will be fetch from https://localshoeapinodejs.herokuapp.com/v1/berita. 
+## Recording Link
+1. Muhammad Daffa Baihaqi https://www.youtube.com/watch?v=9X7tJjG1pqQ&t=1s
+2. Andri Rahmanto https://www.youtube.com/watch?v=9X7tJjG1pqQ&t=924s
+3. Gian Chiesa https://www.youtube.com/watch?v=9X7tJjG1pqQ&t=1770s
 
-## Advanced Topic
-- Rest API
-- Web View https://sepatu.left-store.biz/
-
-## Feature
-- List of local shoes
-- Detail of Local Shoes
-- News of Local Shoes
-
-## Mockup
-![Mockup](https://github.com/mekas/mb1313600022/blob/master/1313618036/mock.jpeg)
+### Subtitle
