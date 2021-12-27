@@ -15,3 +15,4 @@ https://play.google.com/store/apps/details?id=com.khulaifialkatsiri.percobaan
 3. Gian Chiesa https://www.youtube.com/watch?v=9X7tJjG1pqQ&t=1770s
 
 ### Subtitle
+https://github.com/Leffial/left-store/blob/main/Subtitle.sbv
